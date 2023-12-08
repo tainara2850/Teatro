@@ -1,0 +1,31 @@
+POST http://localhost:3333/teatros
+Content-Type: application/json
+
+{
+        "tema": "tema 01",
+        "ncapacidade": "286",
+        "duracao": "120"
+}
+
+###
+
+GET http://localhost:3333/teatros
+
+###
+
+GET http://localhost:3333/teatros?search=IFMS
+
+###
+
+PUT http://localhost:3333/teatros/cfc028f9-ec49-45b9-9772-07dfac978480
+Content-Type: application/json
+
+{
+    "tema": "Stand up",
+    "ncapacidade": "286",
+    "duracao": "120"
+}
+
+###
+
+DELETE http://localhost:3333/teatros/cfc028f9-ec49-45b9-9772-07dfac978480
