@@ -1,4 +1,4 @@
-POST http://localhost:3333/teatros
+POST http://localhost:3333/standup
 Content-Type: application/json
 
 {
@@ -9,23 +9,23 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/teatros
+GET http://localhost:3333/standup 
 
 ###
 
-GET http://localhost:3333/teatros?search=IFMS
+GET http://localhost:3333/standup?search=Standup 
 
 ###
 
-PUT http://localhost:3333/teatros/cfc028f9-ec49-45b9-9772-07dfac978480
+PUT http://localhost:3333/standups/ea9da323-aa94-42a1-b9fe-3d50177acd01
 Content-Type: application/json
 
 {
-    "tema": "Stand up",
+    "tema": "Standup",
     "ncapacidade": "286",
     "duracao": "120"
 }
 
 ###
 
-DELETE http://localhost:3333/teatros/cfc028f9-ec49-45b9-9772-07dfac978480
+DELETE http://localhost:3333/standups/c620ed6c-ae3c-45b1-a724-9538269c9a8d

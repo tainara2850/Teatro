@@ -8,34 +8,31 @@ server.get('/', () => {
     return 'Rota padrão'
 })
 
-server.post('/teatros', (request, reply) => {
+server.post('/standup', (request, reply) => {
 // Acessando dados do corpo da requisição
     const {tema, ncapacidade, duracao} = request.body
-// Exibindo dados
-// console.log(body)
    
-    // return 'cadastrar'
     database.create({
-       tema: tema,
-        ncapacidade: 286,
-        duracao: 120,
+        tema: tema,
+        ncapacidade: ncapacidade,
+        duracao: duracao,
     })
 
     return reply.status(201).send
 })
 
-server.get('/teatros', (request) => {
+server.get('/standup', (request) => {
     const search = request.query.search
     console.log(search)
-    const teatros = database.list(search)
-    console.log(teatros)
-    return teatros
+    const standups  = database.list(search)
+    console.log(standups)
+    return standups
 })
 
-server.put('/teatros/:id', (request, reply) => {
-    const teatroId = request.params.id
+server.put('/standups/:id', (request, reply) => {
+    const standupId = request.params.id
     const {tema, ncapacidade, duracao} = request.body
-    const teatros = database.update(teatroId, {
+    const standup =  database.update(standupId, {
         tema: tema,
         ncapacidade: 286,
         duracao: 120,
@@ -43,10 +40,10 @@ server.put('/teatros/:id', (request, reply) => {
     return reply.status(204).send()
 })
 
-server.delete('/teatros/:id', (request, reply) => {
-    const teatroId = request.params.id
+server.delete('/standups/:id', (request, reply) => {
+    const standupId = request.params.id
 
-    database.delete(teatroId)
+    database.delete(standupId)
 
     return reply.status(204).send()
 }) 
